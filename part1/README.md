@@ -16,6 +16,7 @@
         ~~~
         데이터 값 배열: Series객체.values
         ~~~
+      *****
     * chap2 
         * make DataFrame
         ~~~
