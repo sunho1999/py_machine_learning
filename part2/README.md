@@ -48,5 +48,19 @@
         ~~~
         HTML 표 속성 읽기: pandas.read_html("웹 주소(URL)" 또는 "HTML 파일 경로(이름)")
         ~~~
-      
-  
+    * chpa3 (데이터 저장하기)
+        ---
+        * csv 파일로 저장
+        ~~~
+        CSV 파일로 저장: DataFrame 객체.to_csv("파일 이름(경로)")
+        ~~~
+        * JSON 파일로 저장
+        ~~~
+        JSON 파일로 저장: DataFrame 객체.to_json("파일 이름(경로)")
+        ~~~
+        * Excel 파일로 저장
+        ~~~
+        Excel 파일로 저장: DataFrame 객체.to_excel("파일 이름(경로)")
+        데이터프레임 여러개를 Excel 파일로 저장: pandas.ExcelWriter("파일 이름(경로)")
+        ~~~
+    
