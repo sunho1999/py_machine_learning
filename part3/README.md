@@ -90,5 +90,16 @@
         'barh'|수평 막대 그래프|'pie'|파이 그래프
         'his'|히스토그램|'scatter'|산점도 그래프
         'box'|박스 플롯|'hexbin'|고밀도 산점도 그래프
-    
-          
+        
+        * 선 그래프
+        ~~~
+        선 그래프 : DataFrame 객체.plot()
+        ~~~
+        * 막대 그래프
+        ~~~
+        * 막대 그래프: DataFrame 객체.plot(kind='bar')
+        ~~~
+        * 히스토그램
+        ~~~
+        * 히스토그램: DataFrame 객체.plot(kind='hist')
+        ~~~
