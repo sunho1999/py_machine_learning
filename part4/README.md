@@ -107,3 +107,47 @@
           
         * chap 1-2 면적그래프
           ---
+            - 면적 그래프(area plot)는 선 그래프를 확장한 개념으로 누적 선 그래프라고 부르기도 한다.
+            - 면적 그래프는 각 열의 데이터를 선 그래프로 구현하는데, 선 그래프와 x 축 사이의 공간에 색이 입혀진다.
+            - 색의 투명도(alpha)는 기본값 0.5로 투과되어 보인다.(투명도:0~1범위)
+            - stacked = True 옵션으로 각 열의 선 그래프를 다른 열의 선 그래프 위로 쌓아 올리는 방식으로 표현된다.
+            
+            * ex) 4.13_matplotlib_area1.py 실행화면 (stacked=False)로 그래프 누적x
+            
+            <img width="1295" alt="스크린샷 2021-08-03 오후 7 57 40" src="https://user-images.githubusercontent.com/80037682/128004624-6a15b812-fcdb-4063-8c25-d902eb98b803.png">
+
+            * ex) 4.14_matplotlib_area2.py 실행화면 (stacked=True)로 그래프 누적o
+    
+            <img width="1264" alt="스크린샷 2021-08-03 오후 7 58 02" src="https://user-images.githubusercontent.com/80037682/128004932-25becf8f-fb7d-41fc-b91d-c7e944526ae9.png">
+            
+        * chap 1-3 막대그래프
+          ---
+            - 막대 그래프(bar plot)는 데이터 값의 크기에 비례하여 높이를 갖는 직사각형 마대로 표현된다.
+            - 막대 높이의 상대적 길이 차이를 통해 값의 크고 작음을 설명한다.
+            - 세로형 막대 그래프는 시간적으로 차이가 나는 두점에서 데이터 값의 차이를 잘 설명한다.
+            - 가로형 막대 그래프는 각 변수 사이 값의 크기를 설명하는데 적합하다.
+            ~~~
+            * 세로형 막대 그래프 : plot() 메소드에 kind = 'bar'을 입력함
+            * 가로형 막대 그래프 : plot() 메소드에 kind = 'barh'을 입력함
+            ~~~
+            
+            * ex) 4.16_matplotlib_bar1.py 실행화면 (세로형 막대 그래프)
+            
+            <img width="1125" alt="스크린샷 2021-08-03 오후 8 06 11" src="https://user-images.githubusercontent.com/80037682/128005528-c78835ec-777e-4382-9796-c94c699ddf5b.png">
+            
+            * ex) 4.17_matplotlib_barh1.py 실행화면 (가로형 막대 그래프)
+    
+            <img width="1195" alt="스크린샷 2021-08-03 오후 8 06 43" src="https://user-images.githubusercontent.com/80037682/128005572-39d25cce-8177-411b-b71d-8c908b2d6e57.png">
+        
+        * chap 1-4 히스토그램
+            ---
+            - 히스토그램(histogram)은 변수가 하나인 단변수 데이터의 빈도수를 그래프로 표현한다.
+            - x축을 같은 크기의 여러 구간으로 나누고 각 구간에 속하는 데이터 값의 개수(빈도)를 y축에 표시한다.
+            
+            * ex) 4.19_matplotlib_hist.py 실행화면 
+            
+            <img width="790" alt="스크린샷 2021-08-03 오후 8 16 57" src="https://user-images.githubusercontent.com/80037682/128006649-7cbb38d5-cf62-4ab7-af3e-dfb83eeba6f0.png">
+            
+            ~~~
+            plot() 메소드에 kind = 'hist'옵션을 넣고 bins=10 옵션을 지정하여 10개의 구간으로 나눔
+            ~~~
