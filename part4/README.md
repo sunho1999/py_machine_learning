@@ -151,3 +151,122 @@
             ~~~
             plot() 메소드에 kind = 'hist'옵션을 넣고 bins=10 옵션을 지정하여 10개의 구간으로 나눔
             ~~~
+    
+    * Seaborn 라이브러리 - 고급 그래프 도구
+        ---
+        - Seaborn은 Matplotlib의 기능과 스타일을 확장한 파이썬 시각화 도구의 고급버전이다.
+           
+        * 데이터셋 가져오기
+        ~~~
+        Seaborn 라이브러리에서 제공하는 'titanic'데이터셋을 사용한다.
+        Seaborn의 load_dataset() 함수를 사용하여 데이터프레임을 사용한다.
+        ~~~
+      
+        * 회귀선이 있는 산점도
+        ~~~
+        regplot()함수는 서로 다른 2개의 연속 변수 사이의 산점도를 그리고 선형회귀분석에 의한 회귀선을 함께 나타낸다.
+        fit_reg = False옵션을 성정하면 회귀선을 안보이게 할 수 있다.
+        ~~~
+        * 4.26_seaborn_regplot.py 실행화면 (fit_reg로 왼쪽은 표시, 오른쪽은 표시 x)
+        <img width="1423" alt="스크린샷 2021-08-06 오후 8 23 01" src="https://user-images.githubusercontent.com/80037682/128503345-c77a720c-65d5-4a97-9542-885af31323b6.png">
+          
+        * 히스토그램/커널 밀도 그래프
+        ~~~
+        단변수(하나의 변수)데이터의 분포를 확인할 때 distplot()함수를 이용한다.
+        hist = False 옵션을 추가하면 히스토그램이 표시되지 않고, kde = False 옵션을 전달하면 커널밀도 그래프를 표시하지 않음.
+        밀도그래프는 distplot을 사용하며, 히스토그램은 hisplot을 사용한다.
+        ~~~
+        * 4.27_seaborn_distplot.py 실행화면
+        <img width="1412" alt="스크린샷 2021-08-06 오후 8 28 39" src="https://user-images.githubusercontent.com/80037682/128503969-1e86b04e-423a-41b8-a2e2-e016a9869b38.png">
+          
+        * 히트맵
+        ~~~
+        히트맵을 그리는 heatmap()메소르들 사용한다.
+        2개의 범주형 변수를 x,y축에 놓고 데이터를 매트릭스 형태로 분류한다.
+        데이터프레임을 피벗테이블로 정리 할 때 index와 columns을 통해 설정한다.
+        aggfunc='size'옵션은 데이터 값의 크기를 기준으로 집계를 한다.
+        ~~~
+        * 4.28_seaborn_heatmap.py 실행화면
+        <img width="634" alt="스크린샷 2021-08-06 오후 8 35 27" src="https://user-images.githubusercontent.com/80037682/128504757-8cbf0e7a-f7b2-42a7-808f-daed5cf3d2e9.png">
+          
+        * 그외 범주형 데이터의 산점도, 막대 그래프,빈도 그래프, 박스 플롯 그래프, 조인트 그래프 등이 있다.
+        
+     * Folium 라이브러리 - 지도 활용 
+       ---
+        - Folium 라이브러리는 지도 위에 시각화 할 때 유용한 도구이다.
+        - Folium 라이브러리의 Map()함수를 이용하면 간단하게 지도 객체를 만들 수 있다.
+        - IDE환경에서 실행하면  지도가 표시되지 않는다. - > 웹 기반지도를 만들기 때문에 웹환경에서만 지도를 확인 할 수 있다.
+    
+        * 지도 만들기
+            ---
+        
+        * 4.36_folium_map.py 실행화면 (location옵션에 [위도,경도] 중심으로 지도를 보여준다.)   
+        -seoul.html
+        <img width="1194" alt="스크린샷 2021-08-06 오후 8 45 54" src="https://user-images.githubusercontent.com/80037682/128505859-6d2c6c45-2030-40fd-9054-4a39ec1fa4c8.png">
+
+        * 지도 스타일 적용하기
+        ~~~
+        Map()함수에 tiles 옵션을 적용하면 지도에 적용하는 스타일을 변경할 수 있다.
+        ex)산악 지형등의 지형이 보다 선명한 'Stamen Terrain', 흑백스타일로 도로망을 강조한 'Stamen Toner'
+        ~~~
+        * 4.37_folium_map_tiles.py 실행화면  
+        -seoul2.html(Stamen Terrain 옵션)
+        <img width="1199" alt="스크린샷 2021-08-06 오후 8 52 04" src="https://user-images.githubusercontent.com/80037682/128506533-40c59ba1-6962-4f2d-8d7e-ffab4cfa1ae9.png">  
+        -seoul3.html(Stamen Toner 옵션)
+        <img width="1193" alt="스크린샷 2021-08-06 오후 8 52 24" src="https://user-images.githubusercontent.com/80037682/128506660-0bb022ab-3de3-4c5b-af35-9385d8b67bc1.png">
+       
+        * 지도에 마커 표시하기
+        ~~~
+        마커 위치를 표시하려면 Markter()함수에 위도,경도 정보를 전달한다.
+        popup 옵션을 추가하면 마커를 클릭했을 때 팝업창에 표시해주는 텍스트를 넣을 수 있다.
+        ~~~
+        
+        * 4.38 folium_map_marker.py 실행화면     
+       -seoul_colleges.html
+       <img width="1194" alt="스크린샷 2021-08-06 오후 8 56 23" src="https://user-images.githubusercontent.com/80037682/128506915-8d877ef5-2d9e-46ce-927a-36c5892678e4.png">
+          
+        * 지도 영역에 단계구분도(Choropleth Map)표시하기  
+          -행정구역과 같이 지도 상의 어떤 경계에 둘러싸인 영역에 색을 칠하거나 음영 등으로 정보를 나타내는 시각화 방법이다.
+    
+        ~~~python
+        # 라이브러리 불러오기
+        import pandas as pd
+        import folium
+        import json
+        
+        # 경기도 인구변화 데이터를 불러와서 데이터프레임으로 변환
+        file_path = './경기도인구데이터.xlsx'
+        df = pd.read_excel(file_path, index_col='구분', engine= 'openpyxl')  
+        df.columns = df.columns.map(str)
+        
+        # 경기도 시군구 경계 정보를 가진 geo-json 파일 불러오기
+        geo_path = './경기도행정구역경계.json'
+        try:
+            geo_data = json.load(open(geo_path, encoding='utf-8'))
+        except:
+            geo_data = json.load(open(geo_path, encoding='utf-8-sig'))
+        
+        # 경기도 지도 만들기
+        g_map = folium.Map(location=[37.5502,126.982], 
+                           tiles='Stamen Terrain', zoom_start=9)
+        
+        # 출력할 연도 선택 (2007 ~ 2017년 중에서 선택)
+        year = '2015'
+        
+        # Choropleth 클래스로 단계구분도 표시하기
+        folium.Choropleth(geo_data=geo_data,    # 지도 경계
+                         data = df[year],      # 표시하려는 데이터
+                         columns = [df.index, df[year]],  # 열 지정
+                         fill_color='YlOrRd', fill_opacity=0.7, line_opacity=0.3,
+                         threshold_scale=[10000, 100000, 300000, 500000, 700000],               
+                         key_on='feature.properties.name',
+                         ).add_to(g_map)
+        
+        # 지도를 HTML 파일로 저장하기
+        g_map.save('./gyonggi_population_' + year + '.html')
+        ~~~
+        - 2007년도 경기도 인구 분포
+        <img width="1194" alt="스크린샷 2021-08-06 오후 9 01 29" src="https://user-images.githubusercontent.com/80037682/128507531-aab5eb80-604f-482b-94e8-7f788d7c5fc7.png">
+        - 2017년도 경기도 인구 분포
+        <img width="1195" alt="스크린샷 2021-08-06 오후 9 01 50" src="https://user-images.githubusercontent.com/80037682/128507606-28985c64-a1ff-4e84-bb90-b763858c4451.png">
+        > 이를 비교하면 시간이 지날수록 남양주,분당,화성(동탄) 지역의 신도시 개발과 인구 유입으로 인구가 집중되는 현상이 심화된것을 알 수 있다.
