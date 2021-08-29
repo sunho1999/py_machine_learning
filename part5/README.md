@@ -84,4 +84,28 @@
         ~~~
     * chap6 시계열 데이터
         ---
-    
+        >주식,환율 등 금융 데이터를 다루기 위해 개발된 판다스는 시계열(time series) 데이터를 다루는 여러가지 기능을 제공한다.
+        시간표시 방식중에 특정한 시점을 기록하는 Timestamp와 두 시점 사이의 일정한 기간을 나타내는 Period가 있다.
+      
+        * 문자열을 Timestamp로 변환
+        ~~~
+        to_datetime() :  문자열 등 다른 자료형을 판다스 Timestamp를 나타내는 datetime64 자료형으로 변환 가능하다.
+        ~~~
+        * Timestamp를 Period로 변환
+        ~~~
+        to_period() :  일정한 기간을 나타내는 Period 객체로 Timestamp 객체로 변환할 수 있다.  
+        freq 옵션에 기준이 되는 기간을 설정한다. ex) 'D': 1일, 'M':1개월, 'A':1년
+        ~~~
+        * Timestamp 배열
+        ~~~
+        date_range() : 여러개의 날짜(Timestamp)가 들어 있는 배열 형태의 시계열 데이터를 만들 수 있다.   
+        ex) start = ""  날짜 범위 시작
+        ex) end = None 날짜 범위 끝
+        ex) periods = n(n은 숫자) 생설한 Timestamp 개수
+        ex) freq = ""  시간 가격 설정     
+        ex) tz = ""  시간대(timezone)
+        ~~~
+        * Period 배열
+        ~~~
+        period_range() : 여러개의 기간(Period)이 들어 있는 시계열 데이터를 만든다.
+        ~~~
